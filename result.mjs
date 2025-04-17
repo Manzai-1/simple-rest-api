@@ -1,10 +1,8 @@
 export const result = (status, statusCode, data=null) => {
-    const res = {
-        statusCode: statusCode, 
-        body: {success: status}
-    };
+    const res = { statusCode: statusCode };
 
     if( data ) {
+        res.body = {success: status};
         status ? res.body.data = data : res.body.error = data;
     }
 
